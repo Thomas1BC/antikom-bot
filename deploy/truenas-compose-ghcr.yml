@@ -1,0 +1,13 @@
+services:
+  antikom-bot:
+    image: ghcr.io/TON_USER_GITHUB/antikom-bot:latest
+    container_name: antikom-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      DATA_DIR: /data
+    volumes:
+      - ./data:/data
+    ports:
+      - "3000:3000"

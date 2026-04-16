@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: antikom-bot
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: DATA_DIR
+        value: /tmp/antikom-bot-data
+      - key: POLL_INTERVAL_MS
+        value: 300000
